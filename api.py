@@ -29,13 +29,12 @@ def todo_list_show(id):
     items = todo_item_table.find(todo_list_id=id)
     items = [x for x in items]
 
-    return render_template("todo_list.html", items=items)
+    return render_template("todo_item_partial.html", items=items)
 
 @app.route('/todo_lists/<int:id>', methods=["POST"])
 def todo_item_create(id):
     print 'called post'
     todo_item_table.insert(dict(task=request.form.get("task"), todo_list_id=id, done=False))    
-    task = request.form.get('task')
     # return all of the items for a given list
     items = todo_item_table.find(todo_list_id=id)
     items = [x for x in items]
