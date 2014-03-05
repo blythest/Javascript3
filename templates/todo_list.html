@@ -12,7 +12,7 @@
                 {% endfor %}
             </div>
             <div id="todo-list">
-
+                <div id='mystuff'>
                 {% for item in items %}
                     <div class="todo-list">
                         <input id="item{{item.id}}" type="checkbox"></input>
@@ -20,10 +20,11 @@
                         <label for="item{{item.id}}">{{item.task}}</label>
                     </div>
                 {% endfor %}
+            </div>
 
                 <form id="todo-item-form" method="POST">
-                    <input type="text" name="task"></input>
-                    <input type="submit" value="Create item list"></input>
+                    <input type="text" id="task_id" name="task"></input>
+                    <input type="submit" id="submit" value="Create item list"></input>
                 </form>
 
             </div>
